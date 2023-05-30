@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "V/gYWG3Ga0gWDIS+aoooZo8goWSVeSDQqjvoHUhRliiwYvNws8XGssHkmNOi3O5Ws1yyLNeCJlu4Ap0sayL7Cg==",
+  "success": true,
+  "projectFilePath": "D:\\01_Projects\\SELF_PROJECT\\XAMARIN\\XAMARIN_TOYS\\XAMARIN_TOYS\\XAMARIN_TOYS\\XAMARIN_TOYS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DLIT\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\DLIT\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\DLIT\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\DLIT\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\DLIT\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
