@@ -6,7 +6,12 @@
     <Style TargetType="{x:Type units:IconTextButton}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate />
+                <ControlTemplate x:DataType="{x:Type units:IconTextButton}">
+                    <StackLayout Orientation="Horizontal">
+                        <Path Data="" />
+                        <Label Text="" />
+                    </StackLayout>
+                </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
