@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="XAMARIN_TOYS.Units.IconTextButton"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Content>
+        <Frame x:Name="frame"
+               BackgroundColor="Red">
+            <StackLayout Orientation="Horizontal">
+                <Path x:Name="path" />
+                <Label x:Name="label"
+                       Text="테스트버튼" />
+            </StackLayout>
+        </Frame>
+
+        <!--<Frame x:Name="frame"
+               CornerRadius="10">
+            <StackLayout Orientation="Horizontal">
+                <Path x:Name="icon"
+                      Fill="Black"
+                      Stroke="Black" />
+                <Label x:Name="text" />
+            </StackLayout>
+        </Frame>-->
+    </ContentView.Content>
+</ContentView>
