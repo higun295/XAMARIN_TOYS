@@ -7,6 +7,10 @@
             <Label HorizontalOptions="CenterAndExpand"
                    Text="Registration Page"
                    VerticalOptions="CenterAndExpand" />
+            <Entry />
+            <Button />
+            <ContentView />
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

@@ -2,6 +2,7 @@
 <ContentPage x:Class="XAMARIN_TOYS.Views.LoginPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:units="clr-namespace:XAMARIN_TOYS.UI.Units"
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="False">
 
@@ -63,7 +64,7 @@
 
             <StackLayout HorizontalOptions="Center"
                          Orientation="Horizontal">
-                <Button Text="로그인" />
+                <!--<units:IconTextButton ControlTemplate="{StaticResource IconTextButton_LayoutTemplate}" />-->
                 <Button Text="설정" />
             </StackLayout>
 

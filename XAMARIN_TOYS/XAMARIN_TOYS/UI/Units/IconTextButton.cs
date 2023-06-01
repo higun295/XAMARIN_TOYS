@@ -5,8 +5,10 @@ using Xamarin.Forms;
 
 namespace XAMARIN_TOYS.UI.Units
 {
-    public class IconTextButton : Button
+    public class IconTextButton : ContentView
     {
-
+        public IconTextButton()
+        {
+        }
     }
 }
