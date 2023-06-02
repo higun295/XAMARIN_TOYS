@@ -3,9 +3,41 @@
        xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:XAMARIN_TOYS"
-       xmlns:views="clr-namespace:XAMARIN_TOYS.Views">
+       xmlns:views="clr-namespace:XAMARIN_TOYS.Views"
+       FlyoutBehavior="Disabled">
 
-    <ShellItem FlyoutItemIsVisible="False"
+    <ShellContent ContentTemplate="{DataTemplate views:LoginPage}"
+                  Route="LoginPage">
+        <ShellContent ContentTemplate="{DataTemplate views:AdministrationPage}"
+                      Route="AdministrationPage" />
+    </ShellContent>
+
+    <!--<ShellContent Title="Login"
+                  ContentTemplate="{DataTemplate views:LoginPage}" />
+    <ShellContent Title="Registration"
+                  ContentTemplate="{DataTemplate views:RegistrationPage}" />
+    <ShellContent Title="Main"
+                  ContentTemplate="{DataTemplate local:MainPage}" />
+    <MenuItem Text="help" />-->
+
+
+    <!--<FlyoutItem Title="Login">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:LoginPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Registration">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:RegistrationPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Main">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+    </FlyoutItem>-->
+
+    <!--<ShellItem FlyoutItemIsVisible="False"
                Route="LoginPage">
         <ShellContent ContentTemplate="{DataTemplate views:LoginPage}">
             <ShellContent ContentTemplate="{DataTemplate views:RegistrationPage}"
@@ -16,5 +48,5 @@
     <ShellItem FlyoutItemIsVisible="False"
                Route="MainPage">
         <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
-    </ShellItem>
+    </ShellItem>-->
 </Shell>

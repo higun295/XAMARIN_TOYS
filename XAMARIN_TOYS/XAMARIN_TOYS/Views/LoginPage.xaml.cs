@@ -33,5 +33,10 @@ namespace XAMARIN_TOYS.Views
         {
             await Shell.Current.GoToAsync($"{nameof(RegistrationPage)}");
         }
+
+        private async void Button_Clicked_2(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync($"{nameof(LoginPage)}/{nameof(AdministrationPage)}");
+        }
     }
 }

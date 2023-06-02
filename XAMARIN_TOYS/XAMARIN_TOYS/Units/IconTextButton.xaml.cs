@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Shapes;
@@ -14,25 +9,53 @@ namespace XAMARIN_TOYS.Units
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IconTextButton : ContentView
     {
+        private bool _isPressed = false;
+
         public IconTextButton()
         {
             InitializeComponent();
 
+            path.Data = IconPath;
+            path.Fill = Fill;
+            path.Stroke = Stroke;
 
+            label.Text = Text;
+            frame.CornerRadius = CornerRadius;
 
-            //icon.Data = IconPath;
-            //text.Text = Text;
+            var tab = new TapGestureRecognizer();
+            tab.Tapped += (s, e) =>
+            {
+                if (_isPressed)
+                {
+                    _isPressed = false;
+                    frame.BackgroundColor = Color.White;
+                }
+                else
+                {
+                    _isPressed = true;
+                    frame.BackgroundColor = Color.LightGray;
+                }
+            };
 
-            //var tab = new TapGestureRecognizer();
-            //tab.Tapped += (s, e) =>
-            //{
-            //    frame.BackgroundColor = Color.LightGray;
-            //};
-            ////tab.
-
-            ////frame.GestureRecognizers.Add(tab);
+            frame.GestureRecognizers.Add(tab);
         }
 
+        public static readonly BindableProperty IconProperty = BindableProperty.Create
+        (
+            nameof(IconPath),
+            typeof(Geometry),
+            typeof(IconTextButton),
+            default(string),
+            BindingMode.OneWay
+        );
+        public static readonly BindableProperty TextProperty = BindableProperty.Create
+        (
+            nameof(Text),
+            typeof(string),
+            typeof(IconTextButton),
+            default(string),
+            BindingMode.OneWay
+        );
         public static readonly BindableProperty CornerRadiusProperty = BindableProperty.Create
         (
             nameof(CornerRadius),
@@ -41,11 +64,48 @@ namespace XAMARIN_TOYS.Units
             default(float),
             BindingMode.OneWay
         );
+        public static readonly BindableProperty StrokeProperty = BindableProperty.Create
+        (
+            nameof(Stroke),
+            typeof(Brush),
+            typeof(IconTextButton),
+            default(Brush),
+            BindingMode.OneWay
+        );
+        public static readonly BindableProperty FillProperty = BindableProperty.Create
+        (
+            nameof(Fill),
+            typeof(Brush),
+            typeof(IconTextButton),
+            default(Brush),
+            BindingMode.OneWay
+        );
 
+        [TypeConverter(typeof(PathGeometryConverter))]
+        public Geometry IconPath
+        {
+            get { return (Geometry)GetValue(IconProperty); }
+            set { SetValue(IconProperty, value); }
+        }
+        public string Text
+        {
+            get { return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
         public float CornerRadius
         {
             get { return (float)GetValue(CornerRadiusProperty); }
             set { SetValue(CornerRadiusProperty, value); }
+        }
+        public Brush Stroke
+        {
+            get { return (Brush)GetValue(StrokeProperty); }
+            set { SetValue(StrokeProperty, value); }
+        }
+        public Brush Fill
+        {
+            get { return (Brush)GetValue(FillProperty); }
+            set { SetValue(FillProperty, value); }
         }
 
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -56,43 +116,22 @@ namespace XAMARIN_TOYS.Units
             {
                 frame.CornerRadius = CornerRadius;
             }
+            else if (propertyName == IconProperty.PropertyName)
+            {
+                path.Data = IconPath;
+            }
+            else if (propertyName == TextProperty.PropertyName)
+            {
+                label.Text = Text;
+            }
+            else if (propertyName == StrokeProperty.PropertyName)
+            {
+                path.Stroke = Stroke;
+            }
+            else if (propertyName == FillProperty.PropertyName)
+            {
+                path.Fill = Fill;
+            }
         }
-
-
-
-
-
-
-
-
-
-        //public static readonly BindableProperty IconProperty = BindableProperty.Create(nameof(IconPath), typeof(Geometry), typeof(IconTextButton), default(string), BindingMode.OneWay);
-        //[TypeConverter(typeof(PathGeometryConverter))]
-        //public Geometry IconPath
-        //{
-        //    get { return (Geometry)GetValue(IconProperty); }
-        //    set { SetValue(IconProperty, value); }
-        //}
-
-        //public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(IconTextButton), default(string), BindingMode.OneWay);
-        //public string Text
-        //{
-        //    get { return (string)GetValue(TextProperty); }
-        //    set { SetValue(TextProperty, value); }
-        //}
-
-        //protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        //{
-        //    base.OnPropertyChanged(propertyName);
-
-        //    if (propertyName == IconProperty.PropertyName)
-        //    {
-        //        icon.Data = IconPath;
-        //    }
-        //    else if (propertyName == TextProperty.PropertyName)
-        //    {
-        //        text.Text = Text;
-        //    }
-        //}
     }
 }

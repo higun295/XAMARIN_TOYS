@@ -3,8 +3,7 @@
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentView.Content>
-        <Frame x:Name="frame"
-               BackgroundColor="Red">
+        <Frame x:Name="frame">
             <StackLayout Orientation="Horizontal">
                 <Path x:Name="path" />
                 <Label x:Name="label"
